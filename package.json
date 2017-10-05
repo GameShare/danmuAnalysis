@@ -1,0 +1,24 @@
+{
+  "name": "dammuanalysis",
+  "version": "0.0.1",
+  "description": "The module to analysis the bilibili danmu in live",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "//"
+  },
+  "keywords": [
+    "bilibili"
+  ],
+  "author": "guyao",
+  "license": "MIT",
+  "dependencies": {
+    "log4js": "^2.3.4",
+    "socket.io-client": "^2.0.3",
+    "superagent": "^3.6.1"
+  }
+}
