@@ -5,6 +5,7 @@ const BilibiliClient = require('./lib/BilibiliClient.js')
 async function main () {
   let client = new BilibiliClient(process.argv[2])
   let socket = io.connect('http://localhost:6000')
+  let cookie = ''
   await client.init()
   let url = await client.getLiveAddress(client.roomID)
   logger.info(`视频地址: ${url}`)
@@ -14,6 +15,7 @@ async function main () {
     logger.info(`在线人数:${number}`)
     socket.emit('data', `在线人数:${number}`)
   })
+  client.sendMsg('开始自动弹幕', cookie)
   client.on('data', (data) => {
     // logger.debug(data)
     switch (data.cmd) {
